@@ -1,0 +1,336 @@
+const testdata = [
+  {
+    id: 1,
+    pid: 0,
+    code: 'WZ',
+    name: '默认组织机构',
+    sort: 1,
+    e_name: 'NCEPU',
+    shortname: '华电1222',
+    logo: '1',
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 2,
+    pid: 0,
+    code: 'dbdl',
+    name: '华北电力大学',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+
+  {
+    id: 155,
+    pid: 2,
+    code: 'ZN1901',
+    name: '智能1901',
+    sort: 3,
+    e_name: 'ZN1901',
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 156,
+    pid: 2,
+    code: 'ZNCX1901',
+    name: '智能创新1901',
+    sort: 2,
+    e_name: 'ZNCX1901',
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 3,
+    pid: 2,
+    code: '11',
+    name: '计算1901',
+    sort: 1,
+    e_name: null,
+    shortname: null,
+    logo: '3',
+    phone_number: null,
+    fax: 'aaa',
+    description: null,
+  },
+  {
+    id: 158,
+    pid: 0,
+    code: 'ceit',
+    name: '工程中心',
+    sort: null,
+    e_name: 'ceit',
+    shortname: 'ceit',
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 160,
+    pid: 158,
+    code: 'ywsj',
+    name: '运维审计',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 161,
+    pid: 158,
+    code: 'aqjr',
+    name: '安全接入',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 162,
+    pid: 158,
+    code: 'dsj',
+    name: '大数据',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 163,
+    pid: 158,
+    code: 'gkaq',
+    name: '工控安全',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 164,
+    pid: 2,
+    code: 'JS2003',
+    name: '计算2003',
+    sort: 5,
+    e_name: 'JS2003',
+    shortname: '计算2003',
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 173,
+    pid: 158,
+    code: '999',
+    name: '信息采集',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 174,
+    pid: 2,
+    code: '1',
+    name: '计算1902',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 175,
+    pid: 0,
+    code: 'dky',
+    name: '电科院',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 176,
+    pid: 175,
+    code: 'hlwb',
+    name: '互联网部',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 177,
+    pid: 175,
+    code: 'gjb',
+    name: '国际部',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+  {
+    id: 178,
+    pid: 175,
+    code: 'cwb',
+    name: '财务资产部',
+    sort: null,
+    e_name: null,
+    shortname: null,
+    logo: null,
+    phone_number: null,
+    fax: null,
+    description: null,
+  },
+]
+
+const testdata2 = [
+  {
+    id: 'root',
+    createTime: '@datetime',
+    name: '根节点',
+    order: 0,
+    children: [
+      {
+        id: '1',
+        parentId: 'root',
+        parentName: '根节点',
+        createTime: '@datetime',
+        name: '桃花坞',
+        order: 0,
+      },
+      {
+        id: '2',
+        parentId: 'root',
+        parentName: '根节点',
+        createTime: '@datetime',
+        name: '少林寺',
+        order: 1,
+        children: [
+          {
+            id: '@uuid',
+            parentId: '2',
+            parentName: '少林寺',
+            createTime: '@datetime',
+            name: '达摩院',
+            order: 0,
+          },
+          {
+            id: '@uuid',
+            parentId: '2',
+            parentName: '少林寺',
+            createTime: '@datetime',
+            name: '戒律堂',
+            order: 1,
+          },
+        ],
+      },
+    ],
+  },
+]
+
+module.exports = [
+  {
+    url: '/org/tree',
+    type: 'post',
+    response: (req) => {
+      const {
+        option = '',
+        condition = '',
+        pageNow = 1,
+        pageSize = 100,
+      } = req.body
+      const mockList = testdata.filter((item) => {
+        if (condition === '') return true
+        if (option === '' || option === '*') {
+          return (
+            (item.name && item.name.indexOf(condition) >= 0) ||
+            (item.code && item.code.indexOf(condition) >= 0)
+          )
+        } else {
+          return true
+        }
+      })
+      const list = mockList.filter(
+        (item, index) =>
+          index < pageSize * pageNow && index >= pageSize * (pageNow - 1)
+      )
+      return {
+        code: 201,
+        msg: 'ok',
+        data: list,
+      }
+    },
+  },
+  {
+    url: '/org/insert',
+    type: 'post',
+    response: () => {
+      return {
+        code: 200,
+        msg: '模拟保存成功',
+        data: { id: 124 },
+      }
+    },
+  },
+  {
+    url: '/org/update',
+    type: 'post',
+    response: () => {
+      return {
+        code: 200,
+        msg: '模拟保存成功',
+        data: { id: 124 },
+      }
+    },
+  },
+  {
+    url: '/org/delete',
+    type: 'post',
+    response: () => {
+      return {
+        code: 200,
+        msg: '模拟删除成功',
+      }
+    },
+  },
+]
